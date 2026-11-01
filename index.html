@@ -3,54 +3,242 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cube Clash Block Party — Privacy Policy</title>
+<title>Cube Clash Block Party</title>
+<meta name="description" content="A fast, friendly cube battle game for kids on iPhone and iPad. Made by a father and son. No ads, nothing to buy, no data collected.">
+<meta property="og:title" content="Cube Clash Block Party">
+<meta property="og:description" content="A fast, friendly cube battle game for kids. No ads, nothing to buy, just play.">
+<meta property="og:image" content="https://pashley66.github.io/cubeclash-site/media/share.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>
-  :root { --bg: #f7f5ff; --text: #1d1b2e; --muted: #5b5873; --accent: #7b5cff; --card: #ffffff; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #15132a; --text: #f1efff; --muted: #b3afcf; --accent: #a993ff; --card: #1f1c3a; }
+  :root {
+    --bg: #2a1b6e; --bg2: #4a2fc0; --ink: #ffffff; --muted: #d6cffc; --navy: #1e1640;
+    --gold: #ffd54f; --green: #3ddc84;
+    --card: rgba(255, 255, 255, 0.08); --line: rgba(255, 255, 255, 0.14);
+    --round: ui-rounded, "SF Pro Rounded", "Arial Rounded MT Bold", system-ui, sans-serif;
   }
-  body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
-  main { max-width: 720px; margin: 0 auto; padding: 32px 16px 48px; }
-  h1 { font-size: 30px; margin: 0 0 4px; }
-  h2 { font-size: 20px; margin: 28px 0 8px; color: var(--accent); }
-  .muted { color: var(--muted); }
-  .card { background: var(--card); border-radius: 16px; padding: 16px 20px; margin-top: 20px; }
-  ul { padding-left: 22px; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; background: #1b1250; }
+  body {
+    margin: 0; color: var(--ink); background: var(--bg);
+    font: 18px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    background-image:
+      radial-gradient(1200px 700px at 15% -10%, rgba(255,255,255,0.14), transparent 60%),
+      linear-gradient(180deg, var(--bg2) 0%, var(--bg) 55%, #1b1250 100%);
+  }
+  a { color: var(--gold); }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+  .title { font-family: var(--round); font-weight: 900; letter-spacing: 0.01em; line-height: 1.05;
+           text-shadow: 0 4px 0 rgba(0,0,0,0.35); }
+
+  /* Header */
+  header { padding: 18px 0; }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; }
+  .brand img { width: 40px; height: 40px; border-radius: 10px; }
+  .brand span { font-family: var(--round); font-weight: 900; font-size: 20px; }
+  nav a { color: var(--muted); text-decoration: none; font-weight: 600; margin-left: 18px; font-size: 16px; }
+  nav a:hover { color: var(--ink); }
+  @media (max-width: 640px) { nav { display: none; } }
+
+  /* Hero */
+  .hero { text-align: center; padding: 28px 0 8px; }
+  .hero .icon { width: 132px; height: 132px; border-radius: 30px; box-shadow: 0 16px 40px rgba(0,0,0,0.35); }
+  .hero h1 { margin: 18px 0 0; font-size: clamp(52px, 11vw, 112px); color: var(--gold); }
+  .hero .sub { font-size: clamp(16px, 3.4vw, 28px); letter-spacing: 0.35em; margin: 6px 0 18px; padding-left: 0.35em; }
+  .hero p.lede { max-width: 640px; margin: 0 auto; color: var(--muted); font-size: clamp(18px, 2.4vw, 21px); }
+  .cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 26px 0 8px; }
+  .store {
+    display: inline-flex; align-items: center; gap: 12px; padding: 12px 22px; border-radius: 16px;
+    background: #000; color: #fff; text-decoration: none; border: 2px solid rgba(255,255,255,0.35); text-align: left;
+  }
+  .store svg { width: 28px; height: 28px; fill: #fff; }
+  .store small { display: block; font-size: 12px; opacity: 0.8; line-height: 1.1; }
+  .store b { display: block; font-size: 21px; line-height: 1.15; }
+  .store[aria-disabled="true"] { cursor: default; }
+  .btn-ghost { display: inline-flex; align-items: center; padding: 14px 22px; border-radius: 16px; color: var(--ink);
+               text-decoration: none; font-weight: 700; border: 2px solid var(--line); }
+  .btn-ghost:hover { background: var(--card); }
+  .badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 18px; }
+  .badges span { background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px;
+                 font-size: 15px; font-weight: 600; }
+
+  /* Video */
+  .video { margin: 36px auto 0; max-width: 980px; border-radius: 22px; overflow: hidden; border: 6px solid #e6e2f2;
+           box-shadow: 0 24px 60px rgba(0,0,0,0.45); background: #000; scroll-margin-top: 16px; }
+  .video video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; }
+
+  section { padding: 72px 0 0; }
+  h2.title { font-size: clamp(34px, 6vw, 56px); text-align: center; margin: 0 0 10px; }
+  .section-lede { text-align: center; color: var(--muted); max-width: 680px; margin: 0 auto 30px; }
+
+  /* Screenshots */
+  .shots { display: grid; grid-auto-flow: column; grid-auto-columns: min(86%, 620px); gap: 16px; overflow-x: auto;
+           scroll-snap-type: x mandatory; padding: 4px 16px 18px; margin: 0 -16px; }
+  .shots img { width: 100%; height: auto; border-radius: 18px; scroll-snap-align: center;
+               box-shadow: 0 12px 30px rgba(0,0,0,0.35); }
+
+  /* Features */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 28px; }
+  .feature { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 22px; }
+  .feature .emoji { font-size: 34px; line-height: 1; }
+  .feature h3 { font-family: var(--round); font-weight: 900; font-size: 23px; line-height: 1.15; margin: 12px 0 6px; }
+  .feature p { margin: 0; color: var(--muted); font-size: 17px; }
+
+  /* Clashers */
+  .clashers { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+  .clasher { border-radius: 18px; padding: 16px; color: #fff; border: 1px solid var(--line); }
+  .clasher b { font-family: var(--round); font-size: 20px; display: block; }
+  .clasher span { font-size: 15px; opacity: 0.92; }
+
+  /* Story */
+  .story { display: grid; grid-template-columns: 1fr 1.25fr; gap: 28px; align-items: center;
+           background: var(--card); border: 1px solid var(--line); border-radius: 26px; padding: 28px; }
+  .story img { width: 100%; height: auto; border-radius: 18px; }
+  .story h2.title { text-align: left; }
+  .story p { color: var(--muted); }
+  .story p strong { color: var(--ink); }
+  @media (max-width: 800px) { .story { grid-template-columns: 1fr; padding: 20px; } }
+
+  /* Safety */
+  .safe { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  @media (max-width: 860px) { .safe { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px) { .safe { grid-template-columns: 1fr; } }
+  .safe div { background: rgba(61, 220, 132, 0.12); border: 1px solid rgba(61, 220, 132, 0.4); border-radius: 18px;
+              padding: 18px; }
+  .safe b { display: block; font-family: var(--round); font-size: 20px; }
+  .safe span { color: var(--muted); font-size: 16px; }
+
+  footer { margin-top: 80px; padding: 30px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 15px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; }
+  footer a { color: var(--muted); }
 </style>
 </head>
 <body>
-<main>
-  <h1>Cube Clash Block Party Privacy Policy</h1>
-  <p class="muted">Last updated 31 October 2026</p>
 
-  <div class="card">
-    <strong>The short version:</strong> Cube Clash Block Party doesn't collect, store or share any personal information. There are
-    no accounts, no ads, no chat, no tracking and no in-app purchases.
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="media/icon-512.png" alt=""><span>Cube Clash</span></a>
+    <nav>
+      <a href="#trailer">Trailer</a>
+      <a href="#play">The game</a>
+      <a href="#story">Our story</a>
+      <a href="#safe">Safe for kids</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <img class="icon" src="media/icon-512.png" alt="Cube Clash Block Party app icon" width="132" height="132">
+    <h1 class="title">CUBE CLASH</h1>
+    <div class="sub title">BLOCK PARTY</div>
+    <p class="lede">A fast, friendly arena battler where every hero is a cube with a big personality.
+      Smash boxes, grab boost cubes and be the last clasher standing!</p>
+    <div class="cta">
+      <!-- When the app is live, give this an href="https://apps.apple.com/app/id<APPLE_ID>", drop aria-disabled
+           and change "Coming soon to the" to "Download on the". -->
+      <a class="store" aria-disabled="true" title="Coming soon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.19-1.73-1.36-.14-2.65.8-3.34.8-.69 0-1.75-.78-2.88-.76-1.48.02-2.85.86-3.61 2.19-1.54 2.67-.39 6.62 1.11 8.79.73 1.06 1.6 2.25 2.75 2.21 1.1-.04 1.52-.71 2.85-.71 1.33 0 1.71.71 2.88.69 1.19-.02 1.94-1.08 2.66-2.15.84-1.23 1.19-2.42 1.21-2.48-.03-.01-2.32-.89-2.32-3.54zM14.17 6.13c.61-.74 1.02-1.76.91-2.78-.88.04-1.94.59-2.57 1.32-.56.65-1.06 1.69-.93 2.69.98.08 1.98-.5 2.59-1.23z"/></svg>
+        <span><small>Coming soon to the</small><b>App Store</b></span>
+      </a>
+      <a class="btn-ghost" href="#trailer">▶ Watch the trailer</a>
+    </div>
+    <div class="badges">
+      <span>📱 iPhone &amp; iPad</span><span>🧒 Ages 6–8</span><span>🚫 No ads</span><span>🆓 Free, nothing to buy</span>
+    </div>
+
+    <div class="video" id="trailer">
+      <video controls playsinline preload="metadata" poster="media/trailer-poster.jpg">
+        <source src="media/trailer.mp4" type="video/mp4">
+        Your browser can't play this video. <a href="media/trailer.mp4">Download the trailer</a>.
+      </video>
+    </div>
   </div>
 
-  <h2>What information we collect</h2>
-  <p>None. Cube Clash Block Party does not ask for names, email addresses, photos, location or any other personal information, and
-  it does not use analytics, advertising or tracking services of any kind.</p>
+  <section id="play">
+    <div class="wrap">
+      <h2 class="title">Jump into Scramble</h2>
+      <p class="section-lede">Ten cube clashers, one arena, last cube standing wins. Swipe through the game:</p>
+      <div class="shots" tabindex="0" aria-label="Screenshots">
+        <img src="media/01-home.jpg" alt="Home screen with Inazuma and the Play button" loading="lazy" width="1310" height="603">
+        <img src="media/02-battle.jpg" alt="Battle arena: break the boxes and scoop up green boost cubes" loading="lazy" width="1310" height="603">
+        <img src="media/03-fighters.jpg" alt="Pick your clasher: six cubes, six specials" loading="lazy" width="1310" height="603">
+        <img src="media/04-drop.jpg" alt="Open Cube Drops: tap from Shiny to Ultimate" loading="lazy" width="1310" height="603">
+        <img src="media/05-shop.jpg" alt="Zero ads, nothing to buy" loading="lazy" width="1310" height="603">
+        <img src="media/06-quests.jpg" alt="Finish your quests: eight wins a day" loading="lazy" width="1310" height="603">
+        <img src="media/07-trophy.jpg" alt="Trophy Trail rewards" loading="lazy" width="1310" height="603">
+      </div>
 
-  <h2>Game progress</h2>
-  <p>Your clashers, trophies, currencies and settings are saved only on your device so you can carry on where you left
-  off. They are never sent to us or anyone else. Deleting the app deletes this progress. You can also reset it from
-  the game's Settings screen.</p>
+      <div class="grid">
+        <div class="feature"><div class="emoji">🎮</div><h3>Easy to pick up</h3>
+          <p>Tap to auto-aim, or drag to aim yourself. Four difficulty levels, from Easy for new players to Ultra Hard.</p></div>
+        <div class="feature"><div class="emoji">💥</div><h3>Big moments</h3>
+          <p>Charge up specials, use gizmos and hit overdrive, all while staying ahead of the closing zap zone.</p></div>
+        <div class="feature"><div class="emoji">🤝</div><h3>Solo or Duo</h3>
+          <p>Go it alone in Solo Scramble, or team up with a computer teammate in Duo Scramble.</p></div>
+        <div class="feature"><div class="emoji">🎁</div><h3>Always something to earn</h3>
+          <p>Daily quests, Cube Drops from Shiny to Ultimate, the Trophy Trail, clasher levels, charms and adventures.</p></div>
+      </div>
+    </div>
+  </section>
 
-  <h2>Children's privacy</h2>
-  <p>Cube Clash Block Party is made for kids and is designed to comply with the Children's Online Privacy Protection Act (COPPA)
-  and similar laws. Because we collect no personal information from anyone, we collect none from children.</p>
+  <section id="clashers">
+    <div class="wrap">
+      <h2 class="title">Meet the clashers</h2>
+      <p class="section-lede">Six cube heroes, each with a special move of their own.</p>
+      <div class="clashers">
+        <div class="clasher" style="background:#6b4fe0"><b>Inazuma</b><span>Leaps over walls with Lightning Leap</span></div>
+        <div class="clasher" style="background:#d9643a"><b>Robin Hood</b><span>Calls Talon the Hawk into battle</span></div>
+        <div class="clasher" style="background:#5d6680"><b>Razor &amp; Blade</b><span>Lob bombs over walls and fix themselves up</span></div>
+        <div class="clasher" style="background:#3b72c8"><b>Odin</b><span>Rides the rainbow with Bifrost Crash</span></div>
+        <div class="clasher" style="background:#b8613a"><b>Deadeye</b><span>Builds a Trusty Turret</span></div>
+        <div class="clasher" style="background:#2f9a5a"><b>Rex</b><span>Rushes in, bites, and roars to stun everyone</span></div>
+      </div>
+    </div>
+  </section>
 
-  <h2>Internet and third parties</h2>
-  <p>The game works fully offline. It contains no links to websites, no social features and no third-party code that
-  collects data.</p>
+  <section id="story">
+    <div class="wrap">
+      <div class="story">
+        <img src="media/03-fighters.jpg" alt="The Clashers screen" loading="lazy" width="1310" height="603">
+        <div>
+          <h2 class="title">Made by a dad and his son</h2>
+          <p>Cube Clash Block Party is a father-and-son project by <strong>Peter</strong> and his son <strong>Matthew</strong>.</p>
+          <p>We love fast arena games, but we wanted one kids could play without ads, pop-ups, chat with strangers
+            or pressure to spend money. So we made our own: dreaming up the clashers together, play-testing match after
+            match, and tuning it until it felt just right.</p>
+          <p><strong>Our goal is simple: a fun game kids can enjoy, and parents can trust.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <h2>Changes to this policy</h2>
-  <p>If this policy ever changes, we'll update this page and the date at the top. We will not start collecting personal
-  information from children.</p>
-
-  <h2>Contact</h2>
-  <p>Questions? Email <a href="mailto:mattmakesdeveloper@gmail.com">mattmakesdeveloper@gmail.com</a>.</p>
+  <section id="safe">
+    <div class="wrap">
+      <h2 class="title">Safe for kids, by design</h2>
+      <p class="section-lede">Made for the App Store's Kids Category. Here's what that means for your family:</p>
+      <div class="safe">
+        <div><b>🚫 No ads</b><span>Not now, not ever.</span></div>
+        <div><b>🛒 Nothing to buy</b><span>No in-app purchases. Every reward is earned by playing.</span></div>
+        <div><b>🔒 No data collected</b><span>No accounts, no tracking, no analytics.</span></div>
+        <div><b>💬 No chat</b><span>Every opponent is a computer player.</span></div>
+        <div><b>✈️ Plays offline</b><span>No internet needed. Progress stays on the device.</span></div>
+        <div><b>🔗 No outside links</b><span>Nothing in the game leads out to the web.</span></div>
+      </div>
+      <p class="section-lede" style="margin-top: 22px">Read the full <a href="privacy-policy.html">privacy policy</a>.</p>
+    </div>
+  </section>
 </main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Peter Ashley · Cube Clash Block Party</span>
+    <span><a href="privacy-policy.html">Privacy policy</a> · Support: <a href="mailto:mattmakesdeveloper@gmail.com">mattmakesdeveloper@gmail.com</a></span>
+  </div>
+</footer>
+
 </body>
 </html>
