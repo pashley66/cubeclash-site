@@ -88,10 +88,14 @@
   .feature p { margin: 0; color: var(--muted); font-size: 17px; }
 
   /* Clashers */
-  .clashers { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
-  .clasher { border-radius: 18px; padding: 16px; color: #fff; border: 1px solid var(--line); }
+  .clashers { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+  .clasher { position: relative; overflow: hidden; min-height: 132px; border-radius: 18px; padding: 16px; color: #fff;
+             border: 1px solid var(--line); }
+  .clasher img { position: absolute; right: -22px; bottom: -26px; width: 128px; height: 128px; opacity: 0.38;
+                 transform: rotate(-10deg); pointer-events: none; }
+  .clasher b, .clasher span { position: relative; text-shadow: 0 1px 2px rgba(0,0,0,0.35); }
   .clasher b { font-family: var(--round); font-size: 20px; display: block; }
-  .clasher span { font-size: 15px; opacity: 0.92; }
+  .clasher span { display: block; font-size: 15px; opacity: 0.95; padding-right: 36px; }
 
   /* Story */
   .story { display: grid; grid-template-columns: 1fr 1.25fr; gap: 28px; align-items: center;
@@ -190,12 +194,12 @@
       <h2 class="title">Meet the clashers</h2>
       <p class="section-lede">Six cube heroes, each with a special move of their own.</p>
       <div class="clashers">
-        <div class="clasher" style="background:#6b4fe0"><b>Inazuma</b><span>Leaps over walls with Lightning Leap</span></div>
-        <div class="clasher" style="background:#d9643a"><b>Robin Hood</b><span>Calls Talon the Hawk into battle</span></div>
-        <div class="clasher" style="background:#5d6680"><b>Razor &amp; Blade</b><span>Lob bombs over walls and fix themselves up</span></div>
-        <div class="clasher" style="background:#3b72c8"><b>Odin</b><span>Rides the rainbow with Bifrost Crash</span></div>
-        <div class="clasher" style="background:#b8613a"><b>Deadeye</b><span>Builds a Trusty Turret</span></div>
-        <div class="clasher" style="background:#2f9a5a"><b>Rex</b><span>Rushes in, bites, and roars to stun everyone</span></div>
+        <div class="clasher" style="background:#6b4fe0"><img src="media/clashers/kaminari.png" alt=""><b>Inazuma</b><span>Leaps over walls with Lightning Leap</span></div>
+        <div class="clasher" style="background:#d9643a"><img src="media/clashers/juniper.png" alt=""><b>Robin Hood</b><span>Calls Talon the Hawk into battle</span></div>
+        <div class="clasher" style="background:#2a9d92"><img src="media/clashers/bop-and-pip.png" alt=""><b>Razor &amp; Blade</b><span>Lob bombs over walls and fix themselves up</span></div>
+        <div class="clasher" style="background:#3b5fc0"><img src="media/clashers/torro.png" alt=""><b>Odin</b><span>Rides the rainbow with Bifrost Crash</span></div>
+        <div class="clasher" style="background:#c9733f"><img src="media/clashers/larry.png" alt=""><b>Deadeye</b><span>Builds a Trusty Turret</span></div>
+        <div class="clasher" style="background:#2f9a5a"><img src="media/clashers/woof.png" alt=""><b>Rex</b><span>Rushes in, bites, and roars to stun everyone</span></div>
       </div>
     </div>
   </section>
